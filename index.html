@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ハイブリッドHP制作 - 成約率を極限まで高める新時代のホームページ</title>
+    <meta name="description" content="従来のHPとLPを融合させた革新的なハイブリッドHP。3.3万人フォロワーのインフルエンサーが手がける、成約率を極限まで高めるホームページ制作サービス。">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ヒーローセクション */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="rgba(203,213,224,0.3)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(45, 55, 72, 0.1);
+            color: #2d3748;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            border: 1px solid rgba(45, 55, 72, 0.1);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            color: #1a202c;
+        }
+
+        .hero h1 .highlight {
+            color: #4a5568;
+            position: relative;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #cbd5e0, #a0aec0);
+            border-radius: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            color: #4a5568;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: white;
+            padding: 20px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(45, 55, 72, 0.2);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(45, 55, 72, 0.3);
+        }
+
+        /* セクション共通スタイル */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1a202c;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #718096;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ハイブリッドHP説明セクション */
+        .concept {
+            background: #f7fafc;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            align-items: center;
+        }
+
+        .concept-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #2d3748;
+        }
+
+        .concept-list {
+            list-style: none;
+        }
+
+        .concept-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .concept-list li::before {
+            content: '✓';
+            color: #4a5568;
+            font-weight: bold;
+            margin-right: 15px;
+            margin-top: 2px;
+        }
+
+        .concept-visual {
+            position: relative;
+            text-align: center;
+        }
+
+        .concept-diagram {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        /* 実績セクション */
+        .results {
+            background: white;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .result-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: #f7fafc;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #2d3748;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .result-label {
+            font-size: 1.1rem;
+            color: #4a5568;
+            font-weight: 600;
+        }
+
+        /* プロフィールセクション */
+        .profile {
+            background: #f7fafc;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .profile-image {
+            position: relative;
+        }
+
+        .profile-avatar {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-stat {
+            text-align: center;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .social-number {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .social-platform {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+
+        .profile-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+
+        .profile-description {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .profile-highlights {
+            list-style: none;
+        }
+
+        .profile-highlights li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #2d3748;
+        }
+
+        .profile-highlights li::before {
+            content: '◆';
+            color: #4a5568;
+            margin-right: 15px;
+        }
+
+        /* YouTube動画セクション */
+        .video-section {
+            background: white;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            background: #f7fafc;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* 料金セクション */
+        .pricing {
+            background: #f7fafc;
+        }
+
+        .pricing-card {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2d3748;
+            color: white;
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .pricing-original {
+            font-size: 1.2rem;
+            color: #a0aec0;
+            text-decoration: line-through;
+            margin-bottom: 10px;
+        }
+
+        .pricing-current {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .pricing-current .currency {
+            font-size: 1.5rem;
+            vertical-align: top;
+        }
+
+        .pricing-note {
+            color: #718096;
+            font-size: 1rem;
+            margin-bottom: 40px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: #4a5568;
+            font-weight: bold;
+            margin-right: 15px;
+            margin-top: 2px;
+        }
+
+        .pricing-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: white;
+            padding: 20px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .pricing-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(45, 55, 72, 0.3);
+        }
+
+        /* CTAセクション */
+        .final-cta {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .final-cta-button {
+            display: inline-block;
+            background: white;
+            color: #2d3748;
+            padding: 25px 50px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .final-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            .hero {
+                text-align: center;
+                padding: 40px 0;
+            }
+
+            .hero-content {
+                max-width: none;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .concept-grid,
+            .profile-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .results-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 30px;
+            }
+
+            .profile-avatar {
+                width: 200px;
+                height: 200px;
+                font-size: 4rem;
+            }
+
+            .profile-social {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .pricing-card {
+                margin: 0 20px;
+                padding: 40px 30px;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .final-cta-button {
+                padding: 20px 40px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">🚀 新時代のホームページ制作</div>
+                <h1>
+                    成約率を極限まで高める<br>
+                    <span class="highlight">ハイブリッドHP</span>
+                </h1>
+                <p class="hero-subtitle">
+                    従来のホームページとLPを融合。3.3万フォロワーのインフルエンサーが手がける、<br>
+                    お客様をスムーズに成約へ導く全く新しいホームページ。
+                </p>
+                <a href="#pricing" class="hero-cta">制作を依頼する</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ハイブリッドHP概念説明 -->
+    <section class="section concept">
+        <div class="container">
+            <h2 class="section-title">ハイブリッドHPとは？</h2>
+            <p class="section-subtitle">
+                現代はホームページを長々見る時代ではありません。だからこそ、情報提供と成約を両立させた革新的なアプローチが必要です。
+            </p>
+            
+            <div class="concept-grid">
+                <div class="concept-content">
+                    <h3>従来のHPの問題点</h3>
+                    <ul class="concept-list">
+                        <li>情報は豊富だが成約に繋がらない</li>
+                        <li>ユーザーが迷子になりやすい構造</li>
+                        <li>コンバージョンポイントが不明確</li>
+                        <li>モバイル体験が最適化されていない</li>
+                        <li>競合との差別化ができていない</li>
+                    </ul>
+                </div>
+                
+                <div class="concept-content">
+                    <h3>ハイブリッドHPの特徴</h3>
+                    <ul class="concept-list">
+                        <li>必要な情報 + 強力な成約導線</li>
+                        <li>ユーザーを迷わせない設計</li>
+                        <li>明確なCTA配置で成約率向上</li>
+                        <li>モバイルファーストの最適化</li>
+                        <li>マーケティング視点での差別化</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 実績セクション -->
+    <section class="section results">
+        <div class="container">
+            <h2 class="section-title">実証済みの成果</h2>
+            <p class="section-subtitle">
+                実際に制作したハイブリッドHPで達成した驚異的な実績をご覧ください。
+            </p>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <span class="result-number">100+</span>
+                    <div class="result-label">初月来店数</div>
+                </div>
+                <div class="result-card">
+                    <span class="result-number">120万</span>
+                    <div class="result-label">初月売上（整骨院）</div>
+                </div>
+                <div class="result-card">
+                    <span class="result-number">350%</span>
+                    <div class="result-label">成約率向上</div>
+                </div>
+                <div class="result-card">
+                    <span class="result-number">24時間</span>
+                    <div class="result-label">問い合わせ対応</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- プロフィールセクション -->
+    <section class="section profile">
+        <div class="container">
+            <h2 class="section-title">制作者プロフィール</h2>
+            <p class="section-subtitle">
+                現役インフルエンサーとして活動するフリーランス。マーケティングを熟知しているからこその実績です。
+            </p>
+            
+            <div class="profile-grid">
+                <div class="profile-image">
+                    <div class="profile-avatar">👨‍💻</div>
+                    <div class="profile-social">
+                        <div class="social-stat">
+                            <div class="social-number">3.3万</div>
+                            <div class="social-platform">Instagram</div>
+                        </div>
+                        <div class="social-stat">
+                            <div class="social-number">2.6万</div>
+                            <div class="social-platform">TikTok</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-content">
+                    <h3>現役インフルエンサー × マーケター</h3>
+                    <p class="profile-description">
+                        SNS総フォロワー5.9万人を持つ現役インフルエンサーとして活動しながら、
+                        マーケティングとWeb制作の両方を極めたフリーランス。
+                        トレンドに敏感で、常に最新の手法を取り入れた制作を行っています。
+                    </p>
+                    
+                    <ul class="profile-highlights">
+                        <li>マーケティング視点でのHP設計</li>
+                        <li>トレンドを反映した最新デザイン</li>
+                        <li>SNS連携による集客力向上</li>
+                        <li>データ分析に基づく改善提案</li>
+                        <li>継続的なサポートとコンサルティング</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube動画セクション -->
+    <section class="section video-section">
+        <div class="container">
+            <h2 class="section-title">ハイブリッドHP解説動画</h2>
+            <p class="section-subtitle">
+                ハイブリッドHPの詳細な仕組みと効果について、動画で分かりやすく解説しています。
+            </p>
+            
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/JPJX8QqMPjo?rel=0&modestbranding=1&showinfo=0" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p style="color: #718096; font-size: 1rem;">
+                    ※ 動画を見ることで、ハイブリッドHPの革新性をより深く理解いただけます
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 料金セクション -->
+    <section class="section pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">制作料金</h2>
+            <p class="section-subtitle">
+                外注すると120万円相当のクオリティを、特別価格でご提供いたします。
+            </p>
+            
+            <div class="pricing-card">
+                <div class="pricing-badge">初月限定割引</div>
+                
+                <div class="pricing-original">通常価格: 60万円</div>
+                <div class="pricing-current">
+                    <span class="currency">¥</span>480,000
+                </div>
+                <p class="pricing-note">初月限定 20%OFF適用価格</p>
+                
+                <ul class="pricing-features">
+                    <li>ハイブリッドHP設計・制作</li>
+                    <li>レスポンシブ対応（PC・タブレット・スマホ）</li>
+                    <li>SEO対策・表示速度最適化</li>
+                    <li>お問い合わせフォーム設置</li>
+                    <li>SNS連携設定</li>
+                    <li>Google Analytics設定</li>
+                    <li>3ヶ月間のサポート・修正対応</li>
+                    <li>マーケティング視点でのアドバイス</li>
+                </ul>
+                
+                <a href="#contact" class="pricing-cta">今すぐ制作を依頼する</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最終CTA -->
+    <section class="section final-cta" id="contact">
+        <div class="container">
+            <h2>あなたのビジネスを次のレベルへ</h2>
+            <p>
+                成約率を極限まで高めるハイブリッドHPで、<br>
+                競合との差別化を図り、売上向上を実現しませんか？
+            </p>
+            <a href="mailto:contact@example.com" class="final-cta-button">
+                制作のご相談・お見積り依頼
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // パフォーマンス最適化: 画像遅延読み込み
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
